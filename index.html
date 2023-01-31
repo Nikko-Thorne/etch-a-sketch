@@ -13,24 +13,36 @@
     <div id="wrapper">
       <div id="title">Etch-A-Sketch</div>
       <div id="button-box">
-        <div id="color-picker">
-          <input type="color" value="#000000" />
+        <div id="colorPicker">
+          <input id="colorValue" type="color" value="#000000" />
         </div>
         <div id="color-mode">
-          <button>Color Mode</button>
+          <button id="cButton" onclick="modeHandler(modes, 'cButton')">
+            Color Mode
+          </button>
         </div>
+        <div id="shade-mode">
+          <button id="sButton" onclick="modeHandler(modes, 'sButton')">
+            Shade Mode
+          </button>
+        </div>
+
         <div id="rainbow-mode">
-          <button>Rainbow Mode</button>
+          <button id="rButton" onclick="modeHandler(modes, 'rButton')">
+            Rainbow Mode
+          </button>
         </div>
         <div id="eraser-mode">
-          <button>Eraser Mode</button>
+          <button id="eButton" onclick="modeHandler(modes, 'eButton')">
+            Eraser Mode
+          </button>
         </div>
         <div id="clear" onclick="makeRows(iV, iV)">
           <button>Clear Canvas</button>
         </div>
         <div id="canvas-size">
           <input id="inputRange" type="range" min="1" max="64" value="16" />
-          <p>Canvas Size: <output id="value"></output></p>
+          <p>Canvas Size: <output id="rangeValue"></output></p>
         </div>
       </div>
       <div id="grid">
