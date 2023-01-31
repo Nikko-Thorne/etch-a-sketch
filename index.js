@@ -55,19 +55,21 @@ colorPicker.addEventListener('input', function() {
 
 // function to generate canvas blocks 
 function makeRows(rows, cols) {
-  dDiv = document.querySelectorAll("div.grid-item");
-  dDiv.forEach(div => div.remove());
+  // remove all existing grid-item divs
+  let existingDivs = document.querySelectorAll("div.grid-item");
+  existingDivs.forEach(div => div.remove());
+
+  // set the number of rows and columns for the grid
   container.style.setProperty("--grid-rows", rows);
   container.style.setProperty("--grid-cols", cols);
-  let a = dDiv.length;
-  if(a > (rows * cols)) {
-      dDiv.forEach(div => div.remove());
-    } else {
-  for(c = 0; c < (rows * cols); c++) {
-      let cell = document.createElement("div");
-      container.appendChild(cell).className = "grid-item";
-    };
+
+  // create new grid-item divs and add them to the container
+  for(let i = 0; i < rows * cols; i++) {
+    let cell = document.createElement("div");
+    container.appendChild(cell).className = "grid-item";
   }
+
+  // reset the modes
   modes = {colorMode: false, shadeMode: true, rainbowMode: false, erasorMode: false};
 };
 
