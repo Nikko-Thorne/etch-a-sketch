@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="title">Etch-A-Sketch</div>
+      <div id="button-box">
+        <div id="color-picker">
+          <input type="color" value="#000000" />
+        </div>
+        <div id="color-mode">
+          <button>Color Mode</button>
+        </div>
+        <div id="rainbow-mode">
+          <button>Rainbow Mode</button>
+        </div>
+        <div id="eraser-mode">
+          <button>Eraser Mode</button>
+        </div>
+        <div id="clear" onclick="makeRows(iV, iV)">
+          <button>Clear Canvas</button>
+        </div>
+        <div id="canvas-size">
+          <input id="inputRange" type="range" min="1" max="64" value="16" />
+          <p>Canvas Size: <output id="value"></output></p>
+        </div>
+      </div>
+      <div id="grid">
+        <div id="container"></div>
+      </div>
+      <div id="empty-box"></div>
+    </div>
+    <script src="index.js" async defer></script>
+  </body>
+</html>
