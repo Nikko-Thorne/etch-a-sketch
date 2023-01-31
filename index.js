@@ -77,12 +77,13 @@ function makeRows(rows, cols) {
 container.addEventListener('mouseover', event => {
 let target = event.target
 let rbgPercentValue = parseInt(target.dataset.percent);
-if(modes.shadeMode === true) {
+
 if (isNaN(rbgPercentValue)) rbgPercentValue = 100;
 if (rbgPercentValue >= 10) {
     rbgPercentValue -= 10;
     target.dataset.percent = rbgPercentValue;
 }
+if(modes.shadeMode === true) {
   rgbColor = `rgb(${rbgPercentValue}%,${rbgPercentValue}%,${rbgPercentValue}%)`
   if (target !== container) {
   target.style['background'] = rgbColor;
