@@ -31,7 +31,7 @@ function modeHandler(modes, button) {
     modes.rainbowMode = false;
     modes.erasorMode = true;
   }
-  modes = {colorMode: false, shadeMode: true, rainbowMode: false, erasorMode: false};
+  return modes;
 }
 
 
