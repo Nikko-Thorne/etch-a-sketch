@@ -107,7 +107,12 @@ if(modes.shadeMode === true) {
     if (target !== container) {
       target.style['background'] = rgbaColor;
     }
-    /* if rgbPercentValue < 100 r g b - 255 / 10 or 25.5 rgb  per pass until finally all r g b values = 0 or black? */ 
+    /* if rgbPercentValue < 100 r g b - 255 / 10 or 25.5 rgb  per pass until finally all r g b values = 0 or black?
+  while (randomR > 0 && randomG > 0 && randomB > 0) {
+  randomR -= 25.5;
+  randomG -= 25.5;
+  randomB -= 25.5;
+  rgbaColor = `rgba(${randomR},${randomG},${randomB},1)`; */ 
   }
 });
 
