@@ -75,7 +75,7 @@ function makeRows(rows, cols) {
 
 //  mouse over effect 
 container.addEventListener('mouseover', event => {
-let target = event.target
+let target = event.target;
 let rbgPercentValue = parseInt(target.dataset.percent);
 
 if (isNaN(rbgPercentValue)) rbgPercentValue = 100;
@@ -88,9 +88,9 @@ if(modes.shadeMode === true) {
   if (target !== container) {
   target.style['background'] = rgbColor;
   }
-} else  
-  (modes.colorMode === true) 
+} else if(modes.colorMode === true) {
   target.style['background'] = cValue;
+}
 });
 
 window.onload = () => {
