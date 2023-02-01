@@ -77,6 +77,8 @@ function makeRows(rows, cols) {
 container.addEventListener('mouseover', event => {
 let target = event.target;
 let rbgPercentValue = parseInt(target.dataset.percent);
+let rgbaPercentValue = parseInt(target.dataset.percent);
+
 
 if (isNaN(rbgPercentValue)) rbgPercentValue = 100;
 if (rbgPercentValue >= 10) {
@@ -90,7 +92,15 @@ if(modes.shadeMode === true) {
   }
 } else if(modes.colorMode === true) {
   target.style['background'] = cValue;
-}
+} else if(modes.rainbowMode === true) {
+    let randomR = randomNumber = Math.floor(Math.random() * 256);   
+    let randomG = randomNumber = Math.floor(Math.random() * 256);   
+    let randomB = randomNumber = Math.floor(Math.random() * 256);   
+    rgbaColor = `rgb(${randomR},${randomG},${randomB},1)`;
+    if (target !== container) {
+      target.style['background'] = rgbaColor;
+    }
+  }
 });
 
 window.onload = () => {
