@@ -49,8 +49,10 @@ rInput.addEventListener("input", (event) => {
 //Input color mode Value
 let colorPicker = document.getElementById("colorValue");
 colorPicker.addEventListener('input', function() {
+  modes = {colorMode: true, shadeMode: false, rainbowMode: false, erasorMode: false};
   cValue = this.value;
   return cValue;
+  
 });
 
 // function to generate canvas blocks 

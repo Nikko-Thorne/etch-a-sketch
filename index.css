@@ -226,6 +226,10 @@ body {
 
 }
 
+#color-mode {
+    display: none;
+}
+
 #title {
     grid-area: title;
     display: flex;
