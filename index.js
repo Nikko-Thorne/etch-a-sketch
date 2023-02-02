@@ -92,28 +92,37 @@ if(modes.shadeMode === true) {
   }
 } else if(modes.colorMode === true) {
   target.style['background'] = cValue;
-} else if(modes.rainbowMode === true) /*&& rbgPercentValue = 100? maybe */ {
+} else if(modes.rainbowMode === true) {
     //generate random values for r.g.b colors
     let randomR = randomNumber = Math.floor(Math.random() * 256);   
     let randomG = randomNumber = Math.floor(Math.random() * 256);   
     let randomB = randomNumber = Math.floor(Math.random() * 256);  
-    //start opacity at 0.1 and raise until fully solid at 1.0
-    let alphaValue = 0.1;
-    //for loop to raise opacity
+    let alphaValue = 1;
     for (let i = 0; i < 10; i++) {
-      alphaValue += 0.1;
       rgbaColor = `rgba(${randomR},${randomG},${randomB},${alphaValue})`;
-    }
     if (target !== container) {
       target.style['background'] = rgbaColor;
+      } 
     }
-    /* if rgbPercentValue < 100 r g b - 255 / 10 or 25.5 rgb  per pass until finally all r g b values = 0 or black?
-  while (randomR > 0 && randomG > 0 && randomB > 0) {
-  randomR -= 25.5;
-  randomG -= 25.5;
-  randomB -= 25.5;
-  rgbaColor = `rgba(${randomR},${randomG},${randomB},1)`; */ 
+  } else if(modes.erasorMode === true) {
+    {
+      //generate random values for r.g.b colors
+      let randomR = randomNumber = Math.floor(Math.random() * 256);   
+      let randomG = randomNumber = Math.floor(Math.random() * 256);   
+      let randomB = randomNumber = Math.floor(Math.random() * 256);  
+      //start opacity at 0.1 and raise until fully solid at 1.0
+      let alphaValue = 1;
+      //for loop to raise opacity
+      for (let i = 0; i < 10; i++) {
+        alphaValue -= 0.1;
+        rgbaColor = `rgba(${randomR},${randomG},${randomB},${alphaValue})`;
+      if (target !== container) {
+        target.style['background'] = rgbaColor;
+        } 
+      }
+    }
   }
+
 });
 
 window.onload = () => {
