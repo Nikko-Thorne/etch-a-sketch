@@ -31,7 +31,7 @@ function modeHandler(modes, button) {
     modes.rainbowMode = false;
     modes.erasorMode = true;
   }
-  return modes;
+    modes;
 }
 
 
@@ -130,3 +130,4 @@ if(modes.shadeMode === true) {
 window.onload = () => {
 makeRows(16, 16);
 }
+
