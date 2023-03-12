@@ -107,25 +107,13 @@ if(modes.shadeMode === true) {
       } 
     }
   } else if(modes.erasorMode === true) {
-    {
-      //generate random values for r.g.b colors
-      let randomR = randomNumber = Math.floor(Math.random() * 256);   
-      let randomG = randomNumber = Math.floor(Math.random() * 256);   
-      let randomB = randomNumber = Math.floor(Math.random() * 256);  
-      //start opacity at 0.1 and raise until fully solid at 1.0
-      let alphaValue = 1;
-      //for loop to raise opacity
-      for (let i = 0; i < 10; i++) {
-        alphaValue -= 0.1;
-        rgbaColor = `rgba(${randomR},${randomG},${randomB},${alphaValue})`;
-      if (target !== container) {
-        target.style['background'] = rgbaColor;
-        } 
-      }
+      if(target !== container) {
+        target.style.backgroundColor = '#fff';
     }
-  }
+  }    
+}
 
-});
+);
 
 window.onload = () => {
 makeRows(16, 16);
